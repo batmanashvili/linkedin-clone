@@ -1,5 +1,6 @@
 {
   "expo": {
+    "entryPoint": "./src/App.tsx",
     "name": "linkedin-clone",
     "slug": "linkedin-clone",
     "version": "1.0.0",
