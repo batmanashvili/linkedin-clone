@@ -3,6 +3,8 @@ import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'reac
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
 
+import { AntDesign } from '@expo/vector-icons';
+
 export const HomeScreen = () => {
 
     const { navigate, setOptions  }:NavigateType | any  = useNavigation()
@@ -10,7 +12,10 @@ export const HomeScreen = () => {
 
     useEffect(() => {
         setOptions({
-            headerTitle: () => null
+            headerTitle: () => null,
+            tapBarIcon : () => (
+                <AntDesign name="stepforward" size={24} color="black" />
+            )
         })
     }, [])
 
