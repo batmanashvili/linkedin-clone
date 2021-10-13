@@ -3,6 +3,8 @@ import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'reac
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
 
+import { StickyHeaderSearchBar } from 'components/StickyHeaderSearchBar'
+
 import { AntDesign } from '@expo/vector-icons';
 
 export const HomeScreen = () => {
@@ -18,7 +20,7 @@ export const HomeScreen = () => {
 
     return (
         <View>
-            <Text>HomeScreen</Text>
+           <StickyHeaderSearchBar />
         </View>
     )
 }
