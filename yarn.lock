@@ -1286,19 +1286,7 @@
     base64-js "^1.2.3"
     xmlbuilder "^14.0.0"
 
-"@expo/vector-icons@^12.0.4":
-  version "12.0.5"
-  resolved "https://registry.npmjs.org/@expo/vector-icons/-/vector-icons-12.0.5.tgz"
-  integrity sha512-zWvHBmkpbi1KrPma6Y+r/bsGI6MjbM1MBSe6W9A4uYMLhNI5NR4JtTnqxhf7g1XdpaDtBdv5aOWKEx4d5rxnhg==
-  dependencies:
-    lodash.frompairs "^4.0.1"
-    lodash.isequal "^4.5.0"
-    lodash.isstring "^4.0.1"
-    lodash.omit "^4.5.0"
-    lodash.pick "^4.4.0"
-    lodash.template "^4.5.0"
-
-"@expo/vector-icons@^12.0.5":
+"@expo/vector-icons@^12.0.4", "@expo/vector-icons@^12.0.5":
   version "12.0.5"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-12.0.5.tgz#bc508ad05fb7e9a3e008704977cfec6c18aa7728"
   integrity sha512-zWvHBmkpbi1KrPma6Y+r/bsGI6MjbM1MBSe6W9A4uYMLhNI5NR4JtTnqxhf7g1XdpaDtBdv5aOWKEx4d5rxnhg==
@@ -1568,6 +1556,15 @@
     nanoid "^3.1.23"
     query-string "^7.0.0"
     react-is "^16.13.0"
+
+"@react-navigation/drawer@^6.1.8":
+  version "6.1.8"
+  resolved "https://registry.yarnpkg.com/@react-navigation/drawer/-/drawer-6.1.8.tgz#82e2a06d17166a82dd18233678ebf63ed523aaab"
+  integrity sha512-kYE2EO5dianUuUcaYmAlYBcgtmvGm2fxWTQ5sn103cgPNidp4KBUR9ClkhF+btfRaHKq+8Ul5M6qvL0mBAv/Lg==
+  dependencies:
+    "@react-navigation/elements" "^1.2.1"
+    color "^3.1.3"
+    warn-once "^0.1.0"
 
 "@react-navigation/elements@^1.2.1":
   version "1.2.1"

@@ -3,6 +3,7 @@ import { BottomTabs } from './BottomTabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RouterTypes } from '../navigation/Types/NavTypes';
+import { DrawerNavigator } from './DrawerMenuNavigator';
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { MyNetworkScreen } from '../screens/MyNetworkScreen';
@@ -20,6 +21,8 @@ export const MainNavigation = () => {
         <NavigationContainer>
 
             <MainNavigator.Navigator >
+
+                <MainNavigator.Screen name="Drawer" component={DrawerNavigator} />
 
                 <MainNavigator.Screen options={{
                     headerShown: false
