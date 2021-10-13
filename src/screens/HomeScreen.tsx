@@ -12,10 +12,7 @@ export const HomeScreen = () => {
 
     useEffect(() => {
         setOptions({
-            headerTitle: () => null,
-            tapBarIcon : () => (
-                <AntDesign name="stepforward" size={24} color="black" />
-            )
+            headerShown: false
         })
     }, [])
 
