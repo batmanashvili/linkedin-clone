@@ -3,6 +3,7 @@ import { BottomTabs } from './BottomTabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RouterTypes } from '../navigation/Types/NavTypes';
+import { DrawerNavigator } from './DrawerMenuNavigator';
 
 import { HomeScreen } from '../screens/HomeScreen';
 import { MyNetworkScreen } from '../screens/MyNetworkScreen';
@@ -19,12 +20,19 @@ export const MainNavigation = () => {
 
         <NavigationContainer>
 
-            <MainNavigator.Navigator >
+            <MainNavigator.Navigator initialRouteName="Tab" >
 
                 <MainNavigator.Screen options={{
                     headerShown: false
                 }} name="Tab" component={BottomTabs} />
 
+
+                <MainNavigator.Screen options={{
+                    headerShown: false,
+                    gestureEnabled: true,
+                }} name="Drawer" component={DrawerNavigator} />
+
+                
                 <MainNavigator.Screen name="Home" component={HomeScreen} />
 
                 <MainNavigator.Screen name="My Network" component={MyNetworkScreen} />

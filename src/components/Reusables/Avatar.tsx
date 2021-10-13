@@ -1,13 +1,22 @@
 import React from 'react'
-import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, Image, TextInput, Button, FlatList, StyleSheet } from 'react-native'
+// Toggle Drawer | Open | Close
+import { DrawerActions } from '@react-navigation/native'
 
 interface AvatarType {
-    AvatarImage?: string
+    AvatarImage?: string,
 }
 
 export const Avatar = ({ AvatarImage }: AvatarType) => {
+
+    // Needs To Be Fixed
+    const ToggleDrawerHandler = () => {
+        console.log("D")
+        DrawerActions.toggleDrawer()
+    }
+
     return (
-        <View style={Styles.AvatarWrapper}>
+        <TouchableOpacity style={Styles.AvatarWrapper} onPress={ToggleDrawerHandler}>
 
             {/* Image Can Be Stored In SqlLite Or On Firebase Database
                 AnyWay, It'll Be A String
@@ -22,7 +31,7 @@ export const Avatar = ({ AvatarImage }: AvatarType) => {
                     }} source={{ uri: AvatarImage }} />
             }
             
-        </View>
+        </TouchableOpacity>
     )
 }
 

@@ -2,6 +2,7 @@
 
 export type RouterTypes = {
     // Undefined Until Component Is Not Taking Parameters
+    Drawer: undefined,
     Tab: undefined
     Home: undefined,
     "My Network": undefined,
