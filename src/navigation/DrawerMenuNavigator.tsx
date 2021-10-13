@@ -1,5 +1,5 @@
 import React from 'react'
-import { createDrawerNavigator } from '@react-navigation/drawer'
+import { createDrawerNavigator, DrawerItem } from '@react-navigation/drawer'
 import { NavigationContainer } from '@react-navigation/native'
 import { HomeScreen } from '../screens/HomeScreen'
 import { DrawerTypes } from './Types/DrawerTypes'

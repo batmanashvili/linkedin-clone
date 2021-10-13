@@ -2,10 +2,13 @@ import React from 'react'
 import { View, SafeAreaView, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+
 import { Avatar } from './Reusables/Avatar'
 import { CustomInput } from './Reusables/CustomInput'
 
 export const StickyHeaderSearchBar = () => {
+   
+
     return (
         <SafeAreaView style={Styles.Wrapper}>
             <Avatar />

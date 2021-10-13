@@ -20,7 +20,7 @@ export const MainNavigation = () => {
 
         <NavigationContainer>
 
-            <MainNavigator.Navigator >
+            <MainNavigator.Navigator initialRouteName="Tab" >
 
                 <MainNavigator.Screen options={{
                     headerShown: false
