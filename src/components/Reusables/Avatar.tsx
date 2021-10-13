@@ -30,8 +30,8 @@ const Styles = StyleSheet.create({
     AvatarWrapper: {
         width: 35,
         height: 35,
-        backgroundColor: 'red',
         borderRadius: 50,
+        borderWidth: 1,
         position:'absolute',
         top: 25,
         left: 20
