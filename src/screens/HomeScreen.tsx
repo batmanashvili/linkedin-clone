@@ -9,10 +9,10 @@ import { AntDesign } from '@expo/vector-icons';
 
 export const HomeScreen = () => {
 
-    const { navigate, setOptions  }:NavigateType | any  = useNavigation()
+    const { navigate, setOptions }:NavigateType | any  = useNavigation()
     const { name } = useRoute()
-
     useEffect(() => {
+
         setOptions({
             headerShown: false
         })
@@ -21,6 +21,7 @@ export const HomeScreen = () => {
     return (
         <View>
            <StickyHeaderSearchBar />
+
         </View>
     )
 }

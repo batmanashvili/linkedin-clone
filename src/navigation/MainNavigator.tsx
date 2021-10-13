@@ -22,12 +22,17 @@ export const MainNavigation = () => {
 
             <MainNavigator.Navigator >
 
-                <MainNavigator.Screen name="Drawer" component={DrawerNavigator} />
-
                 <MainNavigator.Screen options={{
                     headerShown: false
                 }} name="Tab" component={BottomTabs} />
 
+
+                <MainNavigator.Screen options={{
+                    headerShown: false,
+                    gestureEnabled: true,
+                }} name="Drawer" component={DrawerNavigator} />
+
+                
                 <MainNavigator.Screen name="Home" component={HomeScreen} />
 
                 <MainNavigator.Screen name="My Network" component={MyNetworkScreen} />
