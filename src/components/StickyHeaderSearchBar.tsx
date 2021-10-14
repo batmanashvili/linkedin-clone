@@ -28,7 +28,8 @@ const Styles = StyleSheet.create({
         borderBottomColor: "#A9B0B5",
         borderBottomWidth: 1,
         position: 'relative',
-        top: 0
+        top: 0,
+        backgroundColor: '#fff'
     },
     MessagesIcon: {
         position: 'absolute',

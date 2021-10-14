@@ -42,7 +42,7 @@ const Styles = StyleSheet.create({
         height: 35,
         borderRadius: 5,
         // #EEF1F6
-        backgroundColor: "#ccc",
+        backgroundColor: "#EEF1F6",
         paddingVertical: 5,
         paddingHorizontal: 40,
         fontSize: 15,

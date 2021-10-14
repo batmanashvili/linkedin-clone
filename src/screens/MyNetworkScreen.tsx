@@ -3,6 +3,9 @@ import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'reac
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
 
+import { StickyHeaderSearchBar } from 'components/StickyHeaderSearchBar'
+import { Card } from '../components/Reusables/Card' 
+
 export const MyNetworkScreen = () => {
 
     useEffect(() => {
@@ -13,8 +16,17 @@ export const MyNetworkScreen = () => {
 
     const { navigate, setOptions  }:NavigateType | any  = useNavigation()
     return (
-        <View>
-            
+        <View style={Styles.NetworkScreen}>
+            <StickyHeaderSearchBar />
+            <Card />
         </View>
     )
 }
+
+const Styles = StyleSheet.create({
+    NetworkScreen: {
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#E7E4DD'
+    }
+})

@@ -24,27 +24,29 @@ export const BottomTabs = () => {
         >
             <Tabs.Screen options={{
                 tabBarIcon: () => (
-                    <Entypo name="home" size={20} color="#8C8C8C" />
+                    <Entypo name="home" size={24} color="#8C8C8C" />
                 )
             }} name="Home" component={HomeScreen} />
             <Tabs.Screen  options={{
                 tabBarIcon: () => (
-                    <FontAwesome5 name="user-friends" size={20} color="#8C8C8C" />
+                    <FontAwesome5 name="user-friends" size={24} color="#8C8C8C" />
                 )
             }} name="My Network" component={MyNetworkScreen} />
             <Tabs.Screen  options={{
                 tabBarIcon: () => (
-                    <AntDesign name="plussquare" size={20} color="#8C8C8C" />
-                )
+                    <AntDesign name="plussquare" size={24} color="#8C8C8C" />
+                ),
+                
+                
             }} name="Post" component={PostScreen} />
             <Tabs.Screen  options={{
                 tabBarIcon: () => (
-                    <Ionicons name="notifications" size={20} color="#8C8C8C" />
-                )
+                    <Ionicons name="notifications" size={24} color="#8C8C8C" />
+                ),
             }} name="Notifications" component={NotificationsScreen} />
             <Tabs.Screen  options={{
                 tabBarIcon: () => (
-                    <Foundation name="shopping-bag" size={20} color="#8C8C8C" />
+                    <Foundation name="shopping-bag" size={24} color="#8C8C8C" />
                 )
             }} name="Jobs" component={JobsScreen} />
         </Tabs.Navigator>
