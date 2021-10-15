@@ -6,6 +6,8 @@ import { AntDesign } from '@expo/vector-icons';
 
 import { StickyHeaderSearchBar } from 'components/StickyHeaderSearchBar'
 import { Card } from '../components/Reusables/Card' 
+import { UserSuggestion } from '../components/Reusables/UserSuggestion';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export const MyNetworkScreen = () => {
 
@@ -27,6 +29,20 @@ export const MyNetworkScreen = () => {
                 <Text style={Styles.CardText}>My Network</Text>
                 <AntDesign style={Styles.RightIcon} name="right" size={24} color="#8C8C8C" />
             </Card>
+
+            {/* Suggestions List */}
+
+            <ScrollView style={Styles.SuggListWrapper}>
+            <UserSuggestion 
+                profileName="David Darsalia" 
+                position="Senior Go/React Developer" 
+                company="Sweeft Digital"
+                numOfConnections='666'
+            />
+            </ScrollView>
+
+           
+            
         </View>
     )
 }
@@ -45,5 +61,13 @@ const Styles = StyleSheet.create({
     },
     RightIcon: {
         marginRight: 15,
+    },
+    SuggListWrapper: {
+        width: '100%',
+        minHeight: '90%',
+        backgroundColor: '#fff',
+        flexDirection: 'row',
+        alignSelf: 'center',
+        justifyContent: 'space-between'
     }
 })

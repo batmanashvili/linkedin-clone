@@ -5,9 +5,12 @@ import { DrawerActions } from '@react-navigation/native'
 
 interface AvatarType {
     AvatarImage?: string,
+    width: number,
+    height: number,
+    style?: any
 }
 
-export const Avatar = ({ AvatarImage }: AvatarType) => {
+export const Avatar = ({ AvatarImage, width, height, style }: AvatarType) => {
 
     // Needs To Be Fixed
     const ToggleDrawerHandler = () => {
@@ -16,7 +19,7 @@ export const Avatar = ({ AvatarImage }: AvatarType) => {
     }
 
     return (
-        <TouchableOpacity style={Styles.AvatarWrapper} onPress={ToggleDrawerHandler}>
+        <TouchableOpacity style={{...Styles.AvatarWrapper, width: width, height: height, ...style }} onPress={ToggleDrawerHandler}>
 
             {/* Image Can Be Stored In SqlLite Or On Firebase Database
                 AnyWay, It'll Be A String
@@ -37,13 +40,13 @@ export const Avatar = ({ AvatarImage }: AvatarType) => {
 
 const Styles = StyleSheet.create({
     AvatarWrapper: {
-        width: 35,
-        height: 35,
+        // width: 35,
+        // height: 35,
         borderRadius: 50,
         borderWidth: 1,
         position:'absolute',
         top: 25,
         left: 20
-
+        
     }
 })

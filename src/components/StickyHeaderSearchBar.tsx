@@ -11,7 +11,7 @@ export const StickyHeaderSearchBar = () => {
 
     return (
         <SafeAreaView style={Styles.Wrapper}>
-            <Avatar />
+            <Avatar width={35} height={35} />
             <CustomInput PlaceHolder="Search" />
 
             {/* Messages Icon */}
