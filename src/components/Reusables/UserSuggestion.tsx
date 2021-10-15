@@ -39,7 +39,7 @@ export const UserSuggestion = ({ profileName, position, company, numOfConnection
 
 const Styles = StyleSheet.create({
     Wrapper: {
-        width: '48%',
+        width: '40%',
         height: 255,
         marginTop: 58,
         borderRadius: 7,
@@ -47,13 +47,17 @@ const Styles = StyleSheet.create({
         position: 'relative',
         alignItems: 'center',
         justifyContent: 'space-between',
-        zIndex: 666
+        zIndex: 666,
+        borderColor: '#C6D0D1',
+        borderWidth: 1,
     },
     CoverPreview: {
         width: '100%',
         height:'22.5%',
-        backgroundColor: 'red',
         borderRadius: 7,
+        backgroundColor: 'rgba(0,0,0,.3)',
+        borderColor: '#C6D0D1',
+        borderWidth: 1,
     },
     ProfileName: {
         position: 'absolute',

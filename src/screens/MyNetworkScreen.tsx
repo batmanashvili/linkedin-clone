@@ -40,13 +40,20 @@ export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) =>
 
             <ScrollView style={Styles.SuggListWrapper}>
                 <Text style={Styles.Header}>{ SuggestionFromCompanyString }</Text>
-            </ScrollView>
-            {/* <UserSuggestion 
+                <UserSuggestion 
                     profileName="David Darsalia" 
                     position="Senior Go/React Developer" 
                     company="Sweeft Digital"
                     numOfConnections='666'
-                /> */}
+                /> 
+                <UserSuggestion 
+                    profileName="David Darsalia" 
+                    position="Senior Go/React Developer" 
+                    company="Sweeft Digital"
+                    numOfConnections='666'
+                /> 
+            </ScrollView>
+             
             
             
         </View>
@@ -58,7 +65,8 @@ const Styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         backgroundColor: '#E7E4DD',
-        zIndex: 1
+        zIndex: 1,
+        
     },
     CardText: {
         fontSize: 15,
@@ -70,7 +78,7 @@ const Styles = StyleSheet.create({
         marginRight: 15,
     },
     SuggListWrapper: {
-        width: '100%',
+        maxWidth: '100%',
         minHeight: '90%',
         backgroundColor: '#fff',
         flexDirection: 'row',
