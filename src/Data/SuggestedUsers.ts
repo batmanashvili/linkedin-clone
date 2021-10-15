@@ -1,4 +1,11 @@
-export const SuggestedUsers = [
+interface SuggesedUsers {
+    profileName: string,
+    position: string,
+    company: string,
+    numOfConnections: string
+}
+
+export const SuggestedUsers:SuggesedUsers[] = [
     {
         "profileName": "David Darsalia",
         "position": "Senior Ui Engineer",

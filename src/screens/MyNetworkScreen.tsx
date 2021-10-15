@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TextInput, ScrollView, FlatList, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
@@ -7,21 +7,36 @@ import { AntDesign } from '@expo/vector-icons';
 import { StickyHeaderSearchBar } from 'components/StickyHeaderSearchBar'
 import { Card } from '../components/Reusables/Card' 
 import { UserSuggestion } from '../components/Reusables/UserSuggestion';
-import { SuggestedUsers } from '../Data/SuggestedUsers'
+// import { SuggestedUsers } from '../Data/SuggestedUsers'
+import axios from 'axios';
 
 interface MyNetworkTypes {
     suggestionsFromCompanies: any
 }
 
+interface SuggestedUsers {
+    profileName: string,
+    position: string,
+    company: string,
+    numOfConnections: string
+}
+
 export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) => {
+
+    // Instead Of Any - There Must Be SuggestedUsers[] Interface
+    const [SuggestedUsers, setSuggestedUsers] = useState<any>([])
+    console.log(SuggestedUsers)
     
     const Company = "Sweeft Digital | A Making Science Company"
     const SuggestionFromCompanyString: string = `People You May Know From ${ Company }`
 
     useEffect(() => {
+        axios.get(`https://linkedinclone-6fadc-default-rtdb.firebaseio.com//SuggestedUsers.json`)
+        .then(res => setSuggestedUsers(res.data))
         setOptions({
             headerShown: false
         })
+        // setSuggestedUsers()
     }, [])
 
     const { navigate, setOptions  }:NavigateType | any  = useNavigation()
@@ -58,10 +73,6 @@ export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) =>
                         />
                     )}
                 />
-
-             
-            
-            
         </View>
     )
 }
