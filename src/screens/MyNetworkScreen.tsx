@@ -9,7 +9,13 @@ import { Card } from '../components/Reusables/Card'
 import { UserSuggestion } from '../components/Reusables/UserSuggestion';
 import { ScrollView } from 'react-native-gesture-handler';
 
-export const MyNetworkScreen = () => {
+interface MyNetworkTypes {
+    suggestionsFromCompanies: any
+}
+
+export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) => {
+    const Company = "Sweeft Digital | A Making Science Company"
+    const SuggestionFromCompanyString: string = `People You May Know From ${ Company }`
 
     useEffect(() => {
         setOptions({
@@ -33,15 +39,15 @@ export const MyNetworkScreen = () => {
             {/* Suggestions List */}
 
             <ScrollView style={Styles.SuggListWrapper}>
-            <UserSuggestion 
-                profileName="David Darsalia" 
-                position="Senior Go/React Developer" 
-                company="Sweeft Digital"
-                numOfConnections='666'
-            />
+                <Text style={Styles.Header}>{ SuggestionFromCompanyString }</Text>
             </ScrollView>
-
-           
+            {/* <UserSuggestion 
+                    profileName="David Darsalia" 
+                    position="Senior Go/React Developer" 
+                    company="Sweeft Digital"
+                    numOfConnections='666'
+                /> */}
+            
             
         </View>
     )
@@ -51,7 +57,8 @@ const Styles = StyleSheet.create({
     NetworkScreen: {
         width: '100%',
         height: '100%',
-        backgroundColor: '#E7E4DD'
+        backgroundColor: '#E7E4DD',
+        zIndex: 1
     },
     CardText: {
         fontSize: 15,
@@ -68,6 +75,15 @@ const Styles = StyleSheet.create({
         backgroundColor: '#fff',
         flexDirection: 'row',
         alignSelf: 'center',
-        justifyContent: 'space-between'
+    },
+    Header: {
+        maxWidth: '70%',
+        textAlign: 'left',
+        color: '#0C0C0C',
+        fontSize: 15,
+        fontWeight: '400',
+        marginBottom: 10,
+        paddingHorizontal: 10,
+        paddingVertical: 10
     }
 })

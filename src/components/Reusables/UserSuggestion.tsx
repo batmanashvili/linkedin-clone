@@ -46,7 +46,8 @@ const Styles = StyleSheet.create({
         backgroundColor: '#fff',
         position: 'relative',
         alignItems: 'center',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        zIndex: 666
     },
     CoverPreview: {
         width: '100%',
