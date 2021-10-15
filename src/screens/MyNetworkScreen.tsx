@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, TextInput, ScrollView, FlatList, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
 import { AntDesign } from '@expo/vector-icons';
@@ -7,13 +7,14 @@ import { AntDesign } from '@expo/vector-icons';
 import { StickyHeaderSearchBar } from 'components/StickyHeaderSearchBar'
 import { Card } from '../components/Reusables/Card' 
 import { UserSuggestion } from '../components/Reusables/UserSuggestion';
-import { ScrollView } from 'react-native-gesture-handler';
+import { SuggestedUsers } from '../Data/SuggestedUsers'
 
 interface MyNetworkTypes {
     suggestionsFromCompanies: any
 }
 
 export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) => {
+    
     const Company = "Sweeft Digital | A Making Science Company"
     const SuggestionFromCompanyString: string = `People You May Know From ${ Company }`
 
@@ -38,21 +39,26 @@ export const MyNetworkScreen = ({ suggestionsFromCompanies }: MyNetworkTypes) =>
 
             {/* Suggestions List */}
 
-            <ScrollView style={Styles.SuggListWrapper}>
-                <Text style={Styles.Header}>{ SuggestionFromCompanyString }</Text>
-                <UserSuggestion 
-                    profileName="David Darsalia" 
-                    position="Senior Go/React Developer" 
-                    company="Sweeft Digital"
-                    numOfConnections='666'
-                /> 
-                <UserSuggestion 
-                    profileName="David Darsalia" 
-                    position="Senior Go/React Developer" 
-                    company="Sweeft Digital"
-                    numOfConnections='666'
-                /> 
-            </ScrollView>
+                <View style={{backgroundColor: '#fff'}}>
+                    <Text style={Styles.Header}>{ SuggestionFromCompanyString }</Text>
+                </View>
+
+                <FlatList
+                    style={Styles.List}
+                    data={SuggestedUsers}
+                    numColumns={2}
+                    keyExtractor={User => `${User.position} Math.random()*666`}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({ item }) => (
+                        <UserSuggestion
+                            profileName={item.profileName}
+                            position={item.position}
+                            company={item.company}
+                            numOfConnections={item.numOfConnections}
+                        />
+                    )}
+                />
+
              
             
             
@@ -78,11 +84,8 @@ const Styles = StyleSheet.create({
         marginRight: 15,
     },
     SuggListWrapper: {
-        maxWidth: '100%',
-        minHeight: '90%',
         backgroundColor: '#fff',
         flexDirection: 'row',
-        alignSelf: 'center',
     },
     Header: {
         maxWidth: '70%',
@@ -90,8 +93,12 @@ const Styles = StyleSheet.create({
         color: '#0C0C0C',
         fontSize: 15,
         fontWeight: '400',
-        marginBottom: 10,
         paddingHorizontal: 10,
         paddingVertical: 10
+    },
+    List: {
+        width: '100%',
+        backgroundColor: '#fff',
+        alignSelf: 'center'
     }
 })

@@ -3,6 +3,7 @@ import { View, Text, Image, TextInput, Button, TouchableOpacity, StyleSheet } fr
 import { Avatar } from './Avatar'
 import { Ionicons } from '@expo/vector-icons';
 import { CustomButton } from './CustomButton';
+import { AntDesign } from '@expo/vector-icons';
 
 interface UserSuggestionTypes {
     profileName: string,
@@ -19,6 +20,10 @@ export const UserSuggestion = ({ profileName, position, company, numOfConnection
 
     return (
         <TouchableOpacity style={Styles.Wrapper}>
+
+            {/* X - Exit Button */}
+
+            <AntDesign style={Styles.XButton} name="closecircle" size={24} color="#4C5457" />
 
             <View style={Styles.CoverPreview}>
                 {/* Cover Goes Here */}
@@ -39,9 +44,8 @@ export const UserSuggestion = ({ profileName, position, company, numOfConnection
 
 const Styles = StyleSheet.create({
     Wrapper: {
-        width: '40%',
+        width: '47%',
         height: 255,
-        marginTop: 58,
         borderRadius: 7,
         backgroundColor: '#fff',
         position: 'relative',
@@ -50,6 +54,8 @@ const Styles = StyleSheet.create({
         zIndex: 666,
         borderColor: '#C6D0D1',
         borderWidth: 1,
+        marginLeft: 8,
+        marginVertical: 10
     },
     CoverPreview: {
         width: '100%',
@@ -72,12 +78,19 @@ const Styles = StyleSheet.create({
         color: '#6F6F6F',
         position: 'absolute',
         top: '54%',
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: 10,
+        flexWrap: 'wrap'
     },
     ConnectionCount: {
         fontSize: 13,
         position: 'absolute',
         color: '#6F6F6F',
         bottom: '20%'
+    },
+    XButton: {
+        position: 'absolute',
+        top: 5,
+        right: 10
     }
 })
