@@ -3,19 +3,21 @@ import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'reac
 import { useNavigation, useRoute } from '@react-navigation/core'
 import { NavigateType } from 'navigation/Types/NavTypes'
 
+import { StickyPostHeader } from 'components/Reusables/StickyPostHeader';
+
 export const PostScreen = () => {
 
     const { navigate, setOptions  }:NavigateType | any  = useNavigation()
 
     useEffect(() => {
         setOptions({
-            headerShown: false
+            headerShown: false,
         })
     }, [])
 
     return (
         <View>
-            
+            <StickyPostHeader />
         </View>
     )
 }
