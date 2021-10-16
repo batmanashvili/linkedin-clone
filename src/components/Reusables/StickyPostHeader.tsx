@@ -1,17 +1,23 @@
 import React from 'react'
-import { View, Text, Image, TextInput, Button, FlatList, StyleSheet } from 'react-native'
+import { View, Text, Image, TextInput, Button, FlatList, StyleSheet, TouchableOpacity } from 'react-native'
 import { AntDesign } from '@expo/vector-icons';
 
-interface PostHeaderTypes {
-    style: any
-}
+// interface PostHeaderTypes {
+//     style: any
+// }
 
-export const StickyPostHeader = ({ style }: PostHeaderTypes) => {
+export const StickyPostHeader = () => {
     return (
         <View style={Styles.Wrapper}>
-            <AntDesign name="close" size={25} color="#6E6E6E" />
-            <Text style={Styles.HeaderText}>Start Post</Text>
-            <Text style={Styles.PostButton}>Post</Text>
+            <TouchableOpacity>
+                <AntDesign name="close" size={25} color="#6E6E6E" />
+            </TouchableOpacity>
+
+           <Text style={Styles.HeaderText}>Start Post</Text>
+
+            <TouchableOpacity>
+                <Text style={Styles.PostButton}>Post</Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -31,7 +37,7 @@ const Styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     HeaderText: {
-        fontSize: 23,
+        fontSize: 21,
         color: '#000',
         fontWeight: '500'
     },
