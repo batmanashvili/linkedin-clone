@@ -35,7 +35,7 @@ export const UserSuggestion = ({ profileName, position, company, numOfConnection
 
             {/* Reusable Avatar */}
 
-            <Avatar style={{position: 'absolute', top: 15, left: 55}} width={90} height={90} />
+            <Avatar style={{position: 'absolute', top: 15, left: 50}} width={90} height={90} />
 
             <CustomButton style={{ bottom: 13, width: '80%', borderRadius: 20, backgroundColor: '#fff', borderColor: '#305CA3', borderWidth: 1.2}} title="Connect" />
         </TouchableOpacity>
@@ -73,14 +73,16 @@ const Styles = StyleSheet.create({
         color: '#161616',
     },
     Position: {
-        maxWidth: '70%',
+        maxWidth: '85%',
+        minHeight: 30,
         fontSize: 15,
         color: '#6F6F6F',
         position: 'absolute',
         top: '54%',
         textAlign: 'center',
         marginBottom: 10,
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        writingDirection: 'rtl'
     },
     ConnectionCount: {
         fontSize: 13,

@@ -23,7 +23,25 @@ export const PostScreen = () => {
             <Avatar width={50} height={50} style={{ 
                 top: 90
              }} />
-             <SelectOptions />
+            <View style={Styles.PostArea}>
+                <TextInput
+                numberOfLines={30}
+                    style={Styles.Input}
+                />
+            </View>
         </View>
     )
 }
+
+const Styles = StyleSheet.create({
+    PostArea: {
+        width: '100%',
+        height: '60%',
+        marginVertical: '17.5%'
+    },
+    Input: {
+        width: "100%",
+        height: '100%',
+        fontSize: 23
+    }
+})
