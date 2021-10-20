@@ -18,14 +18,25 @@ export const PostScreen = () => {
     }, [])
 
     return (
-        <View>
+        <View style={{ backgroundColor: '#fff', flex: 1 }}>
+            {/* Header */}
             <StickyPostHeader />
+
             <Avatar width={50} height={50} style={{ 
                 top: 90
-             }} />
+            }} />
+
+            {/* DropDown Options */}
+
+            {/* <View style={Styles.DropDownMenuWrapper}> */}
+                <View style={Styles.DropDown} ></View>
+            {/* </View> */}
+
+            {/* Input PlaceHolder */}
             <View style={Styles.PostArea}>
                 <TextInput
-                numberOfLines={30}
+                placeholder="What Do You Want To Talk About?"
+                    numberOfLines={30}
                     style={Styles.Input}
                 />
             </View>
@@ -37,11 +48,22 @@ const Styles = StyleSheet.create({
     PostArea: {
         width: '100%',
         height: '60%',
-        marginVertical: '17.5%'
+        marginVertical: '17.5%',
+        paddingHorizontal: 20,
+        backgroundColor: '#fff'
     },
     Input: {
         width: "100%",
-        height: '100%',
-        fontSize: 23
+        minHeight: '10%',
+        marginTop: 70,
+        fontSize: 18,
+        fontWeight: '600',
+    },
+    
+    DropDown: {
+        width: 100,
+        height: 40,
+        borderColor: 'red',
+        borderWidth: 1,
     }
 })
