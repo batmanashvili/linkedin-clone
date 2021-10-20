@@ -29,7 +29,14 @@ export const PostScreen = () => {
             {/* DropDown Options */}
 
             {/* <View style={Styles.DropDownMenuWrapper}> */}
-                <View style={Styles.DropDown} ></View>
+                <View style={Styles.DropDown} >
+                    <Text style={Styles.UserName}>User</Text>
+                    <View>
+                        <Text>
+                            Anyone
+                        </Text>
+                    </View>
+                </View>
             {/* </View> */}
 
             {/* Input PlaceHolder */}
@@ -55,15 +62,23 @@ const Styles = StyleSheet.create({
     Input: {
         width: "100%",
         minHeight: '10%',
-        marginTop: 70,
+        marginTop: 50,
         fontSize: 18,
         fontWeight: '600',
     },
-    
     DropDown: {
-        width: 100,
+        minWidth: 100,
         height: 40,
         borderColor: 'red',
         borderWidth: 1,
+        position: 'absolute',
+        top: 95,
+        zIndex: 333,
+        left: 80
+    },
+    UserName: {
+        fontSize: 17,
+        color: 'black',
+        fontWeight: '600'
     }
 })
