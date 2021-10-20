@@ -47,7 +47,8 @@ const Styles = StyleSheet.create({
         position:'absolute',
         top: 25,
         left: 20,
-        zIndex: 33,
+        zIndex: 33, 
         backgroundColor: 'dodgerblue'
     }
 })
+
